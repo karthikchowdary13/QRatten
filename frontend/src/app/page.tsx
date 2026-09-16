@@ -87,10 +87,10 @@ const roles = [
 ];
 
 const recentStudents = [
-  ['KR', 'Karthik R', '10:31:04'],
-  ['HP', 'Hema P', '10:31:11'],
-  ['RS', 'Rahul S', '10:31:17'],
-  ['SV', 'Sneha V', '10:31:22'],
+  ['RR', 'Rahul R', '10:31:04'],
+  ['KP', 'Kiran P', '10:31:11'],
+  ['VS', 'Varun S', '10:31:17'],
+  ['SV', 'Shashi V', '10:31:22'],
 ];
 
 export default function LandingPage() {
