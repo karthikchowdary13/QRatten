@@ -178,32 +178,32 @@ export default function LandingPage() {
 
                   <aside className={styles.previewSidebar}>
                     <div className={styles.sidebarActive}>
-                      <Activity size={13} />
+                      <Activity size={15} />
                       Dashboard
                     </div>
 
                     <div>
-                      <QrCode size={13} />
+                      <QrCode size={15} />
                       Attendance
                     </div>
 
                     <div>
-                      <Clock3 size={13} />
+                      <Clock3 size={15} />
                       Sessions
                     </div>
 
                     <div>
-                      <BarChart3 size={13} />
+                      <BarChart3 size={15} />
                       Analytics
                     </div>
 
                     <div>
-                      <UserRound size={13} />
+                      <UserRound size={15} />
                       Students
                     </div>
 
                     <div>
-                      <Settings size={13} />
+                      <Settings size={15} />
                       Settings
                     </div>
                   </aside>
@@ -239,14 +239,14 @@ export default function LandingPage() {
                           <span>Attendance QR</span>
 
                           <span className={styles.rotatingBadge}>
-                            <Clock3 size={9} />
+                            <Clock3 size={11} />
                             LIVE
                           </span>
                         </div>
 
                         <div className={styles.qrBox}>
                           <QrCode
-                            size={125}
+                            size={140}
                             strokeWidth={1.8}
                           />
 
@@ -286,7 +286,7 @@ export default function LandingPage() {
 
                         <div className={styles.locationCard}>
                           <div className={styles.locationIcon}>
-                            <MapPin size={13} />
+                            <MapPin size={15} />
                           </div>
 
                           <div>
@@ -301,7 +301,7 @@ export default function LandingPage() {
                             </small>
                           </div>
 
-                          <Check size={14} />
+                          <Check size={16} />
                         </div>
 
                         {/* Recently marked */}
@@ -320,7 +320,7 @@ export default function LandingPage() {
                                 key={name}
                               >
                                 <div className={styles.avatar}>
-                                  {initials}
+                                   {initials}
                                 </div>
 
                                 <span>{name}</span>
@@ -328,7 +328,7 @@ export default function LandingPage() {
                                 <time>{time}</time>
 
                                 <Check
-                                  size={10}
+                                  size={12}
                                   className={styles.studentCheck}
                                 />
                               </div>
@@ -345,7 +345,7 @@ export default function LandingPage() {
 
               <div className={styles.securityCallout}>
                 <div className={styles.calloutIcon}>
-                  <Clock3 size={18} />
+                  <Clock3 size={20} />
                 </div>
 
                 <div>
@@ -359,7 +359,7 @@ export default function LandingPage() {
 
               <div className={styles.locationCallout}>
                 <div className={styles.locationCalloutIcon}>
-                  <MapPin size={18} />
+                  <MapPin size={20} />
                 </div>
 
                 <div>
