@@ -1,0 +1,267 @@
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.containerInline {
+    position: relative;
+    width: fit-content;
+    flex-shrink: 0;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.inputWrapper:hover {
+    background: #ffffff;
+    border-color: var(--primary);
+}
+
+.inputActive {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.inputInline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 0 8px;
+}
+
+.inputInline:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.inputInline.inputActive {
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.calendarIcon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.valText {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.placeholder {
+    color: var(--text-muted);
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.clearBtn {
+    margin-left: auto;
+    background: rgba(0, 0, 0, 0.06);
+    border: none;
+    color: var(--text-muted);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clearBtn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* Calendar Dropdown */
+.calendarDropdown {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 0 !important;
+    width: 290px !important;
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
+    z-index: 10000 !important;
+    padding: 16px !important;
+    visibility: visible !important;
+    transform: translateZ(0) !important;
+    will-change: transform, opacity !important;
+    animation: slideIn 0.2s ease-out !important;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.navBtn {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: hsl(var(--accent));
+    color: hsl(var(--accent));
+}
+
+.monthDisplay {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.headerDropdown > div:first-child {
+    min-height: 32px !important;
+    padding: 4px 8px !important;
+    background: transparent !important;
+    border: none !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    box-shadow: none !important;
+    color: var(--text-primary) !important;
+}
+
+.headerDropdown > div:first-child:hover {
+    background: rgba(0, 0, 0, 0.04) !important;
+}
+
+.daysRow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 8px;
+}
+
+.dayName {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding: 8px 0;
+}
+
+.cellsGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.cell {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.cell:hover:not(.disabled) {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.disabled {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.today {
+    color: hsl(var(--accent));
+    font-weight: 800;
+}
+
+.today::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--accent));
+    border-radius: 50%;
+}
+
+.selected {
+    background: hsl(var(--accent)) !important;
+    color: white !important;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.footer {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+}
+
+.todayBtn {
+    background: transparent;
+    border: 1px solid hsl(var(--accent));
+    color: hsl(var(--accent));
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.todayBtn:hover {
+    background: hsl(var(--accent));
+    color: white;
+}

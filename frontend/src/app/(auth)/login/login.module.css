@@ -1,0 +1,1460 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #eef5ff;
+
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+.layout {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   LEFT HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 53%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 78% 24%,
+            rgba(59, 130, 246, 0.45),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #06142e 0%,
+            #0b2147 52%,
+            #173d76 100%
+        );
+
+    color: white;
+}
+
+.heroImage {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("/images/campus.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.55;
+
+    transform: scale(1.03);
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 13, 31, 0.98) 0%,
+            rgba(5, 18, 43, 0.91) 45%,
+            rgba(13, 43, 88, 0.65) 78%,
+            rgba(20, 55, 110, 0.25) 100%
+        );
+
+    z-index: 1;
+}
+
+.heroGlow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -240px;
+    right: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(79, 130, 255, 0.2);
+
+    filter: blur(80px);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+
+    z-index: 3;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 38px 7%;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    display: block;
+
+    width: auto;
+    height: 48px;
+
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.brand a:hover .logo {
+    opacity: 0.9;
+    transform: scale(1.015);
+}
+
+.tagline {
+    margin: 8px 0 0;
+
+    font-size: 14px;
+
+    letter-spacing: 0.01em;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================================================
+   HERO MIDDLE
+========================================================= */
+
+.heroMiddle {
+    width: 100%;
+    max-width: 720px;
+
+    margin-top: -15px;
+}
+
+.trusted {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 28px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    color: #60a5fa;
+}
+
+.trusted span {
+    display: block;
+
+    width: 36px;
+    height: 1px;
+
+    background: #60a5fa;
+}
+
+
+.heroTitle {
+    margin: 0;
+
+    font-size: clamp(48px, 4.5vw, 72px);
+
+    line-height: 1.04;
+
+    font-weight: 750;
+
+    letter-spacing: -0.045em;
+
+    color: #ffffff;
+}
+
+.heroTitle span {
+    background:
+        linear-gradient(
+            90deg,
+            #4facfe 0%,
+            #7c83f5 55%,
+            #a78bfa 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.heroDescription {
+    max-width: 610px;
+
+    margin: 28px 0 0;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-top: 40px;
+}
+
+.feature {
+    min-width: 0;
+}
+
+.featureIcon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(14px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.featureIcon svg {
+    width: 23px;
+    height: 23px;
+
+    color: #93c5fd;
+}
+
+.feature:nth-child(2) .featureIcon svg {
+    color: #a5b4fc;
+}
+
+.feature:nth-child(3) .featureIcon svg {
+    color: #c4b5fd;
+}
+
+.feature:nth-child(4) .featureIcon svg {
+    color: #93c5fd;
+}
+
+.feature:hover .featureIcon {
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.feature h3 {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    color: #ffffff;
+}
+
+.feature p {
+    margin: 5px 0 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================================
+   HERO BOTTOM
+========================================================= */
+
+.heroBottom {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.heroQuote {
+    display: flex;
+    flex-direction: column;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-style: italic;
+
+    font-size: 28px;
+
+    line-height: 1.1;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.heroQuote span:nth-child(2) {
+    margin-left: 32px;
+}
+
+.heroQuote div {
+    width: 125px;
+    height: 4px;
+
+    margin-top: 9px;
+    margin-left: 30px;
+
+    border-radius: 100px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b82f6,
+            #8b5cf6
+        );
+
+    transform: rotate(-7deg);
+}
+
+.heroTrust {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 2px;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.heroTrust svg {
+    width: 15px;
+    height: 15px;
+
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   RIGHT LOGIN SECTION
+========================================================= */
+
+.loginSection {
+    position: relative;
+
+    width: 47%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   DECORATIVE SHAPES
+========================================================= */
+
+.decorCircleOne {
+    position: absolute;
+
+    top: -100px;
+    right: -90px;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.12),
+            rgba(99, 102, 241, 0.03) 55%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+.decorCircleTwo {
+    position: absolute;
+
+    right: -120px;
+    bottom: -170px;
+
+    width: 420px;
+    height: 420px;
+
+    border: 55px solid rgba(99, 102, 241, 0.07);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP NAV
+========================================================= */
+
+.topNav {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 18px;
+
+    padding:
+        16px
+        7%
+        8px;
+}
+
+.topNav > span {
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+.signupButton {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 48px;
+
+    padding: 0 22px;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #2563eb;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 3px 12px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.signupButton:hover {
+    transform: translateY(-1px);
+
+    background: #eff6ff;
+
+    border-color: #93c5fd;
+}
+
+
+/* =========================================================
+   LOGIN WRAPPER
+========================================================= */
+
+.loginWrapper {
+    position: relative;
+
+    z-index: 4;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        5px
+        7%
+        10px;
+
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+.loginWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.loginContainer {
+    width: 100%;
+
+    max-width: 510px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   MOBILE LOGO
+========================================================= */
+
+.mobileLogo {
+    display: none;
+
+    justify-content: center;
+
+    margin-bottom: 24px;
+}
+
+.mobileLogo img {
+    height: 44px;
+
+    width: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    text-align: left;
+
+    margin-bottom: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 6px;
+}
+
+.title {
+    margin: 0;
+
+    font-size: clamp(32px, 3vw, 42px);
+
+    line-height: 1.05;
+
+    font-weight: 750;
+
+    color: #020617;
+
+    letter-spacing: -0.045em;
+}
+
+.subtitle {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   VERIFICATION / ERROR
+========================================================= */
+
+.errorBanner {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #fed7aa;
+
+    border-radius: 14px;
+
+    background: #fff7ed;
+
+    color: #c2410c;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.errorIcon {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    color: #f59e0b;
+}
+
+.errorBanner h3 {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    color: #9a3412;
+}
+
+.errorBanner p {
+    margin: 4px 0 10px;
+
+    color: #c2410c;
+}
+
+.resendButton {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 7px 10px;
+
+    background: #ffedd5;
+
+    color: #9a3412;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.resendButton:hover {
+    background: #fed7aa;
+}
+
+.resendButton:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    width: 100%;
+}
+
+.formGroup {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.label {
+    font-size: 12px;
+
+    font-weight: 650;
+
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.inputWrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+.input {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 48px;
+
+    padding:
+        0
+        54px
+        0
+        54px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 3px 15px rgba(15, 23, 42, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+    color: #94a3b8;
+}
+
+.input:hover {
+    border-color: #cbd5e1;
+}
+
+.input:focus {
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 4px rgba(59, 130, 246, 0.1),
+        0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+.input:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+.inputIcon {
+    position: absolute;
+
+    left: 18px;
+    top: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translateY(-50%);
+
+    color: #94a3b8;
+
+    pointer-events: none;
+
+    transition: color 0.2s ease;
+}
+
+.inputWrapper:focus-within .inputIcon {
+    color: #3b82f6;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+.passwordToggle {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.passwordToggle svg {
+    width: 19px;
+    height: 19px;
+}
+
+.passwordToggle:hover {
+    background: #f1f5f9;
+
+    color: #334155;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+========================================================= */
+
+.forgotPassword {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 9px;
+}
+
+.forgotPassword a {
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-decoration 0.2s ease;
+}
+
+.forgotPassword a:hover {
+    color: #1d4ed8;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   SIGN IN BUTTON
+========================================================= */
+
+.submitButton {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b82f6 0%,
+            #6366f1 52%,
+            #8b5cf6 100%
+        );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(79, 70, 229, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.submitButton svg {
+    width: 19px;
+    height: 19px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 35px rgba(79, 70, 229, 0.32);
+}
+
+.submitButton:hover svg {
+    transform: translateX(3px);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+.submitButton:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+
+    transform: none;
+}
+
+.loader {
+    width: 19px;
+    height: 19px;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+.divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #e2e8f0;
+}
+
+.divider p {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   GOOGLE
+========================================================= */
+
+.googleButton {
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 12px rgba(15, 23, 42, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.googleButton:hover {
+    border-color: #cbd5e1;
+
+    background: #f8fafc;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(15, 23, 42, 0.06);
+}
+
+.googleIcon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    color: #4285f4;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.security {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding-top: 9px;
+
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+.security svg {
+    width: 17px;
+    height: 17px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   FOOTER LINK
+========================================================= */
+
+.footer {
+    margin: -4px 0 0;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #64748b;
+}
+
+.link {
+    color: #0f172a;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   PAGE FOOTER
+========================================================= */
+
+.pageFooter {
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-shrink: 0;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        14px
+        7%
+        18px;
+
+    font-size: 11px;
+
+    color: #94a3b8;
+
+    background: #ffffff;
+}
+
+.pageFooter > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.pageFooter a {
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.pageFooter a:hover {
+    color: #475569;
+}
+
+
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .heroContent {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .heroTitle {
+        font-size: clamp(44px, 4.2vw, 62px);
+    }
+
+    .features {
+        gap: 14px;
+    }
+
+    .featureIcon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .loginWrapper {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        width: 50%;
+    }
+
+    .loginSection {
+        width: 50%;
+    }
+
+    .heroTitle {
+        font-size: 45px;
+    }
+
+    .heroDescription {
+        font-size: 16px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+
+        row-gap: 22px;
+    }
+
+    .heroBottom {
+        display: none;
+    }
+
+    .pageFooter {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .page {
+        position: relative;
+
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+
+        overflow: auto;
+    }
+
+    .layout {
+        min-height: 100vh;
+
+        display: block;
+    }
+
+    .hero {
+        display: none;
+    }
+
+    .loginSection {
+        width: 100%;
+        min-height: 100vh;
+
+        height: auto;
+
+        overflow: visible;
+    }
+
+    .topNav {
+        padding:
+            24px
+            24px
+            10px;
+    }
+
+    .loginWrapper {
+        min-height: auto;
+
+        padding:
+            35px
+            24px
+            30px;
+    }
+
+    .mobileLogo {
+        display: flex;
+    }
+
+    .header {
+        text-align: center;
+
+        align-items: center;
+
+        margin-bottom: 32px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .pageFooter {
+        display: flex;
+
+        flex-direction: column;
+
+        padding:
+            10px
+            24px
+            25px;
+
+        text-align: center;
+    }
+
+    .pageFooter > div {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .topNav {
+        gap: 10px;
+
+        padding:
+            20px
+            20px
+            5px;
+    }
+
+    .topNav > span {
+        font-size: 13px;
+    }
+
+    .signupButton {
+        height: 43px;
+
+        padding: 0 16px;
+
+        border-radius: 11px;
+    }
+
+    .loginWrapper {
+        padding:
+            30px
+            20px
+            20px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .form {
+        gap: 19px;
+    }
+
+    .input,
+    .submitButton,
+    .googleButton {
+        height: 55px;
+    }
+
+    .security {
+        font-size: 12px;
+    }
+
+    .pageFooter {
+        font-size: 10px;
+    }
+}
