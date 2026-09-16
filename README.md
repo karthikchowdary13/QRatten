@@ -139,48 +139,6 @@ QRatten/
 
 ---
 
-## 🚀 Getting Started
-
-### Backend Setup
-
-```bash id="y6vl1r"
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-Backend runs at:
-
-```bash id="w2mghy"
-http://localhost:8000
-```
-
-Swagger API Documentation:
-
-```bash id="sd6r8a"
-http://localhost:8000/docs
-```
-
----
-
-### Frontend Setup
-
-```bash id="fvww5r"
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend runs at:
-
-```bash id="s9x41s"
-http://localhost:3000
-```
-
----
-
 ## 🔐 Environment Variables
 
 QRatten uses environment-based configuration for:
