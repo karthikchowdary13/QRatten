@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { authApi } from '@/lib/api';
+import { authApi, API_BASE } from '@/lib/api';
 import {
     Shield,
     Mail,
@@ -26,7 +26,7 @@ export default function RegisterPage() {
 
     // Wake up Render backend on load
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_API_BASE}/`).catch(() => {});
+        fetch(`${API_BASE}/`).catch(() => {});
     }, []);
 
     // Form State

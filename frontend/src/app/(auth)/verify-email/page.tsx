@@ -4,6 +4,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { CheckCircle2, XCircle, Loader2, ArrowRight } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 function VerifyEmailContent() {
     const searchParams = useSearchParams();
@@ -22,7 +23,7 @@ function VerifyEmailContent() {
 
         const verifyEmail = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/auth/verify-email`, {
+                const response = await fetch(`${API_BASE}/auth/verify-email`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

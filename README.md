@@ -183,7 +183,9 @@ Create the required environment files in the backend and frontend directories ba
 ---
 
 ## 🌐 Live Demo
-**Frontend:** https://qratten.vercel.app
+* **Frontend Application:** https://qrattenapp.vercel.app
+* **Backend API:** https://qratten-backend.onrender.com
+* **API Documentation:** https://qratten-backend.onrender.com/docs
 
 ---
 

@@ -28,8 +28,8 @@ class Settings(BaseSettings):
     EMAIL_USER: str | None = None
     EMAIL_PASSWORD: str | None = None
     EMAIL_FROM: str | None = None
-    FRONTEND_URL: str = "http://localhost:3000"
-    API_URL: str = "http://127.0.0.1:8000"
+    FRONTEND_URL: str = "https://qrattenapp.vercel.app"
+    API_URL: str = "https://qratten-backend.onrender.com"
     
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

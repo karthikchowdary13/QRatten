@@ -28,7 +28,7 @@ A professional, high-performance attendance management dashboard built with Next
 2.  **Environment Setup**:
     Create a `.env.local` file with the following:
     ```env
-    NEXT_PUBLIC_API_URL=your_api_url
+    NEXT_PUBLIC_API_BASE=https://qratten-backend.onrender.com
     ```
 
 3.  **Run the development server**:

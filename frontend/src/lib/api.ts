@@ -2,8 +2,10 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { clearAuthSession } from './auth';
 import Cookies from 'js-cookie';
 
+export const API_BASE = process.env.NEXT_PUBLIC_API_BASE || process.env.NEXT_PUBLIC_API_URL || 'https://qratten-backend.onrender.com';
+
 const api = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_BASE,
+    baseURL: API_BASE,
     headers: {
         'Content-Type': 'application/json',
     },
@@ -62,7 +64,7 @@ api.interceptors.response.use(
                 const refreshToken = typeof window !== 'undefined' ? localStorage.getItem('refreshToken') : null;
 
                 const refreshRes = await axios.post(
-                    `${process.env.NEXT_PUBLIC_API_BASE}/auth/refresh`,
+                    `${API_BASE}/auth/refresh`,
                     { refreshToken }
                 );
 
@@ -211,7 +213,7 @@ export const reportsApi = {
         endDate?: string,
         sectionId?: string
     ) => {
-        const baseUrl = process.env.NEXT_PUBLIC_API_BASE;
+        const baseUrl = API_BASE;
         const params = new URLSearchParams();
         if (startDate) params.append('startDate', startDate);
         if (endDate) params.append('endDate', endDate);
@@ -219,7 +221,7 @@ export const reportsApi = {
         return `${baseUrl}/reports/pdf?${params.toString()}`;
     },
     downloadStudentPDF: (studentId: string) => {
-        const baseUrl = process.env.NEXT_PUBLIC_API_BASE;
+        const baseUrl = API_BASE;
         return `${baseUrl}/reports/student/${studentId}/pdf`;
     },
 };
@@ -256,7 +258,7 @@ export const adminApi = {
         api.post('/admin/sessions/manual-qr', data),
         
     getExportUrl: () => {
-        const baseUrl = process.env.NEXT_PUBLIC_API_BASE;
+        const baseUrl = API_BASE;
         return `${baseUrl}/admin/reports/export-csv`;
     }
 };

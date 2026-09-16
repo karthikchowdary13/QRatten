@@ -4,6 +4,7 @@ import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Mail, ArrowLeft } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 function CheckEmailContent() {
     const searchParams = useSearchParams();
@@ -32,7 +33,7 @@ function CheckEmailContent() {
                     <button 
                         onClick={async () => {
                             try {
-                                const res = await fetch(process.env.NEXT_PUBLIC_API_BASE + '/api/test-email');
+                                const res = await fetch(`${API_BASE}/api/test-email`);
                                 const data = await res.json();
                                 alert(JSON.stringify(data));
                             } catch (e) {

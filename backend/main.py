@@ -177,10 +177,11 @@ app.add_middleware(
         "http://127.0.0.1:3001",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://qrattenapp.vercel.app",
         "https://qratten.vercel.app",
         "https://qratten-next.vercel.app",
     ],
-    allow_origin_regex=r"https://qratten-.*\.vercel\.app", # Allow all Vercel preview deployments
+    allow_origin_regex=r"https://.*qratten.*\.vercel\.app", # Allow all Vercel preview and production deployments
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
