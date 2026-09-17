@@ -51,7 +51,7 @@
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: minmax(460px, 0.9fr) minmax(760px, 1.1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   align-items: center;
   justify-content: space-between;
 
@@ -61,6 +61,8 @@
 .heroContent {
   padding: 65px 0;
   max-width: 580px;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .eyebrow {
@@ -171,6 +173,9 @@
   position: relative;
 
   min-height: 460px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 
   display: flex;
   align-items: center;
@@ -1644,20 +1649,29 @@
 
 @media (max-width: 1100px) {
   .heroInner {
-    grid-template-columns: 1fr;
-
-    padding: 45px 0 70px;
+    grid-template-columns: minmax(0, 1fr);
+    width: min(1560px, calc(100% - clamp(24px, 5vw, 48px)));
+    box-sizing: border-box;
+    padding: 40px 0 60px;
+    gap: 36px;
+    overflow-x: hidden;
   }
 
   .heroContent {
     padding: 10px 0;
-
     text-align: center;
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .heroContent > p {
     margin-left: auto;
     margin-right: auto;
+    max-width: 540px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .actions {
@@ -1666,10 +1680,19 @@
 
   .productArea {
     min-height: 450px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .productPreview {
     margin: 0 auto;
+    max-width: 100%;
   }
 
   .securityCallout {
@@ -1754,62 +1777,89 @@
   .ctaInner,
   .footerInner,
   .footerBottom {
-    width: calc(100% - 40px);
+    width: min(1560px, calc(100% - clamp(24px, 6vw, 40px)));
+    box-sizing: border-box;
   }
 
   .heroInner {
-    padding-top: 45px;
+    padding-top: 36px;
+    padding-bottom: 45px;
+    gap: 28px;
+    overflow-x: hidden;
+  }
+
+  .heroContent {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .heroContent h1 {
-    font-size: 45px;
-
-    letter-spacing: -2.5px;
+    font-size: clamp(26px, 8vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .headingLine {
     white-space: normal;
+    display: inline;
   }
 
   .heroContent > p {
-    font-size: 12px;
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.6;
+    margin: 18px auto 24px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
   }
 
   .actions {
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 290px;
+    margin: 0 auto;
+    gap: 12px;
   }
 
   .primaryButton,
   .secondaryButton {
-    width: 185px;
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+    justify-content: center;
   }
 
   .productArea {
-    min-height: 350px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 330px;
   }
 
   .productPreview {
-    width: 640px;
+    width: 580px;
     max-width: none;
-
-    transform: scale(0.64);
+    flex-shrink: 0;
+    margin: 0 auto;
+    transform: scale(0.76);
     transform-origin: center center;
   }
 
-  .securityCallout {
-    right: -5px;
-    top: 15px;
-
-    transform: scale(0.82);
-    transform-origin: right top;
-  }
-
+  .securityCallout,
   .locationCallout {
-    right: -5px;
-    bottom: 5px;
-
-    transform: scale(0.82);
-    transform-origin: right bottom;
+    display: none;
   }
 
   .featuresInner {
@@ -1822,6 +1872,7 @@
 
   .featureWrapper {
     width: 100%;
+    box-sizing: border-box;
   }
 
   .featureDivider {
@@ -1835,11 +1886,12 @@
   .howSection,
   .securitySection,
   .roles {
-    padding: 70px 20px;
+    padding: 60px 16px;
+    box-sizing: border-box;
   }
 
   .steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     gap: 28px;
   }
@@ -1849,23 +1901,27 @@
   }
 
   .securityGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
 
     margin: 0 auto;
   }
 
   .securityCard {
     min-height: 180px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .ctaInner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     gap: 25px;
 
-    padding: 50px 0;
+    padding: 40px 0;
   }
 
   .ctaIntro {
@@ -1877,6 +1933,9 @@
 
   .ctaStats {
     grid-column: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     gap: 25px;
   }
@@ -1913,58 +1972,80 @@
 
 
 /* =========================================================
-   SMALL MOBILE
+   SMALL MOBILE BREAKPOINTS & RESPONSIVE DASHBOARD SCALING
 ========================================================= */
 
-@media (max-width: 450px) {
-  .heroContent h1 {
-    font-size: 39px;
-  }
-
-  .heroContent > p {
-    font-size: 11px;
-  }
-
+@media (max-width: 560px) {
   .productArea {
-    min-height: 285px;
+    min-height: 290px;
   }
 
   .productPreview {
-    transform: scale(0.49);
+    transform: scale(0.66);
+  }
+}
+
+@media (max-width: 450px) {
+  .productArea {
+    min-height: 250px;
   }
 
-  .securityCallout,
-  .locationCallout {
-    transform: scale(0.68);
+  .productPreview {
+    transform: scale(0.55);
   }
 
   .howSection h2,
   .roles h2 {
-    font-size: 30px;
+    font-size: clamp(24px, 7vw, 30px);
   }
 
   .securityText h2 {
-    font-size: 34px;
+    font-size: clamp(26px, 7.5vw, 34px);
   }
 
   .roleCard {
-    min-height: 320px;
+    min-height: 300px;
 
-    padding: 24px;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   .ctaActions {
     flex-direction: column;
-
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
+    max-width: 260px;
+    gap: 10px;
   }
 
   .ctaPrimary,
   .ctaSecondary {
-    width: 145px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
   }
 
   .ctaStats {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 370px) {
+  .productArea {
+    min-height: 215px;
+  }
+
+  .productPreview {
+    transform: scale(0.46);
+  }
+}
+
+@media (max-width: 330px) {
+  .productArea {
+    min-height: 190px;
+  }
+
+  .productPreview {
+    transform: scale(0.41);
   }
 }

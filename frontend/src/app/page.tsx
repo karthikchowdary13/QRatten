@@ -140,7 +140,7 @@ export default function LandingPage() {
                 </a>
               </div>
 
-              <div className="mt-8 flex items-start gap-4 p-4 rounded-xl bg-purple-500/10 border border-purple-500/10 text-left max-w-lg shadow-sm mr-auto ml-0">
+              <div className="mt-8 flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-purple-500/10 border border-purple-500/10 text-left w-full max-w-lg mx-auto box-border shadow-sm">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
                   <FlaskConical className="w-5 h-5 text-purple-600" />
                 </div>

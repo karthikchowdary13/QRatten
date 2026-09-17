@@ -102,6 +102,9 @@
 
 @media (max-width: 768px) {
     .inner {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         padding: 12px 16px;
     }
     .wordmark {
