@@ -45,20 +45,22 @@
   position: relative;
   z-index: 2;
 
-  width: min(1320px, calc(100% - 80px));
+  width: min(1560px, calc(100% - clamp(40px, 5vw, 96px)));
   min-height: 580px;
 
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: minmax(460px, 0.9fr) minmax(760px, 1.1fr);
   align-items: center;
+  justify-content: space-between;
 
-  gap: 50px;
+  gap: clamp(40px, 5vw, 90px);
 }
 
 .heroContent {
   padding: 65px 0;
+  max-width: 580px;
 }
 
 .eyebrow {
@@ -72,15 +74,20 @@
   letter-spacing: 1.8px;
 }
 
+.headingLine {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .heroContent h1 {
   margin: 0;
 
   color: #111936;
 
-  font-size: clamp(52px, 5.5vw, 74px);
-  line-height: 1.02;
+  font-size: clamp(44px, 4.2vw, 66px);
+  line-height: 1.08;
 
-  letter-spacing: -3.5px;
+  letter-spacing: -2.5px;
   font-weight: 800;
 }
 
@@ -89,7 +96,7 @@
 }
 
 .heroContent > p {
-  max-width: 560px;
+  max-width: 540px;
 
   margin: 26px 0;
 
@@ -167,11 +174,11 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .productPreview {
-  width: 800px;
+  width: 820px;
   max-width: 100%;
 
   overflow: hidden;
@@ -186,6 +193,15 @@
     0 8px 20px rgba(42, 70, 126, 0.06);
 
   transform: rotate(0.6deg);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1536px) {
+  .productPreview {
+    width: 860px;
+    transform: rotate(0.6deg) scale(1.04);
+    transform-origin: center right;
+  }
 }
 
 .previewTopbar {
@@ -757,7 +773,7 @@
 }
 
 .featuresInner {
-  width: min(1160px, calc(100% - 80px));
+  width: min(1560px, calc(100% - clamp(40px, 5vw, 96px)));
 
   min-height: 140px;
 
@@ -881,7 +897,7 @@
 }
 
 .steps {
-  width: min(1120px, 100%);
+  width: min(1360px, calc(100% - clamp(40px, 5vw, 96px)));
 
   margin: 55px auto 0;
 
@@ -974,7 +990,7 @@
 }
 
 .securityInner {
-  width: min(1160px, 100%);
+  width: min(1560px, calc(100% - clamp(40px, 5vw, 96px)));
 
   margin: 0 auto;
 
@@ -983,7 +999,7 @@
 
   align-items: center;
 
-  gap: 70px;
+  gap: clamp(50px, 5vw, 90px);
 }
 
 .securityText h2 {
@@ -1085,14 +1101,14 @@
 }
 
 .roleGrid {
-  width: min(1160px, 100%);
+  width: min(1560px, calc(100% - clamp(40px, 5vw, 96px)));
 
   margin: 48px auto 0;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 22px;
+  gap: 24px;
 
   text-align: left;
 }
@@ -1360,7 +1376,7 @@
   position: relative;
   z-index: 2;
 
-  width: min(1160px, calc(100% - 80px));
+  width: min(1560px, calc(100% - clamp(40px, 5vw, 96px)));
 
   min-height: 245px;
 
@@ -1371,7 +1387,7 @@
 
   align-items: center;
 
-  gap: 40px;
+  gap: clamp(30px, 4vw, 60px);
 }
 
 .ctaIntro {
@@ -1519,7 +1535,7 @@
 }
 
 .footerInner {
-  width: min(1160px, calc(100% - 80px));
+  width: min(1560px, calc(100% - clamp(40px, 5vw, 96px)));
 
   min-height: 90px;
 
@@ -1596,7 +1612,7 @@
 }
 
 .footerBottom {
-  width: min(1160px, calc(100% - 80px));
+  width: min(1560px, calc(100% - clamp(40px, 5vw, 96px)));
 
   min-height: 52px;
 
@@ -1749,6 +1765,10 @@
     font-size: 45px;
 
     letter-spacing: -2.5px;
+  }
+
+  .headingLine {
+    white-space: normal;
   }
 
   .heroContent > p {

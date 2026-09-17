@@ -115,9 +115,9 @@ export default function LandingPage() {
               <h1>
                 Attendance
                 <br />
-                Made <span>Simple.</span>
+                <span className={styles.headingLine}>Made <span>Simple.</span></span>
                 <br />
-                Made <span>Secure.</span>
+                <span className={styles.headingLine}>Made <span>Secure.</span></span>
               </h1>
 
               <p>
