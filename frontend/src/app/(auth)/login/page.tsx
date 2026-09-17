@@ -117,8 +117,9 @@ export default function LoginPage() {
                 INSTITUTION_ADMIN: '/admin',
             };
 
+            const roleKey = (user.role || '').toUpperCase();
             router.push(
-                dashboardMap[user.role] || '/dashboard'
+                dashboardMap[roleKey] || '/dashboard'
             );
         } catch (err: any) {
             showToast(
@@ -646,33 +647,123 @@ export default function LoginPage() {
 
                                 </button>
 
-                                {/* GUEST LOGIN */}
-                                <button
-                                    type="button"
-                                    onClick={handleGuestLogin}
-                                    disabled={loading}
-                                    style={{
-                                        width: '100%',
-                                        padding: '0.875rem',
-                                        borderRadius: '0.75rem',
-                                        backgroundColor: '#f1f5f9',
-                                        color: '#334155',
-                                        border: '1px solid #e2e8f0',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        gap: '0.5rem',
-                                        fontWeight: '500',
-                                        marginTop: '0.5rem',
-                                        cursor: 'pointer',
-                                        transition: 'all 0.2s'
-                                    }}
-                                    onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#e2e8f0'; }}
-                                    onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#f1f5f9'; }}
-                                >
-                                    <Users size={18} />
-                                    <span>Continue as Guest</span>
-                                </button>
+                                 {/* DEMO ACCOUNTS QUICK LOGIN */}
+                                 <div style={{ marginTop: '1.25rem', marginBottom: '0.25rem' }}>
+                                     <div style={{
+                                         display: 'flex',
+                                         alignItems: 'center',
+                                         gap: '8px',
+                                         fontSize: '11px',
+                                         color: '#64748b',
+                                         marginBottom: '8px',
+                                         fontWeight: 600,
+                                         textTransform: 'uppercase',
+                                         letterSpacing: '0.5px'
+                                     }}>
+                                         <span>Quick Demo Access</span>
+                                         <div style={{ flex: 1, height: '1px', backgroundColor: '#e2e8f0' }} />
+                                     </div>
+
+                                     <div style={{
+                                         display: 'grid',
+                                         gridTemplateColumns: 'repeat(3, 1fr)',
+                                         gap: '8px',
+                                     }}>
+                                         <button
+                                             type="button"
+                                             onClick={() => performLogin('faculty@qratten.com', 'faculty123')}
+                                             disabled={loading}
+                                             style={{
+                                                 padding: '8px 6px',
+                                                 borderRadius: '8px',
+                                                 backgroundColor: '#eff6ff',
+                                                 border: '1px solid #bfdbfe',
+                                                 color: '#1d4ed8',
+                                                 fontSize: '12px',
+                                                 fontWeight: 600,
+                                                 cursor: 'pointer',
+                                                 transition: 'all 0.15s',
+                                                 textAlign: 'center'
+                                             }}
+                                             onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#dbeafe'; }}
+                                             onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#eff6ff'; }}
+                                         >
+                                             🎓 Faculty
+                                         </button>
+
+                                         <button
+                                             type="button"
+                                             onClick={() => performLogin('student@qratten.com', 'student123')}
+                                             disabled={loading}
+                                             style={{
+                                                 padding: '8px 6px',
+                                                 borderRadius: '8px',
+                                                 backgroundColor: '#f0fdf4',
+                                                 border: '1px solid #bbf7d0',
+                                                 color: '#15803d',
+                                                 fontSize: '12px',
+                                                 fontWeight: 600,
+                                                 cursor: 'pointer',
+                                                 transition: 'all 0.15s',
+                                                 textAlign: 'center'
+                                             }}
+                                             onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#dcfce7'; }}
+                                             onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#f0fdf4'; }}
+                                         >
+                                             📚 Student
+                                         </button>
+
+                                         <button
+                                             type="button"
+                                             onClick={() => performLogin('admin@qratten.com', 'admin123')}
+                                             disabled={loading}
+                                             style={{
+                                                 padding: '8px 6px',
+                                                 borderRadius: '8px',
+                                                 backgroundColor: '#faf5ff',
+                                                 border: '1px solid #e9d5ff',
+                                                 color: '#7e22ce',
+                                                 fontSize: '12px',
+                                                 fontWeight: 600,
+                                                 cursor: 'pointer',
+                                                 transition: 'all 0.15s',
+                                                 textAlign: 'center'
+                                             }}
+                                             onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#f3e8ff'; }}
+                                             onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#faf5ff'; }}
+                                         >
+                                             ⚡ Admin
+                                         </button>
+                                     </div>
+                                 </div>
+
+                                 {/* GUEST LOGIN */}
+                                 <button
+                                     type="button"
+                                     onClick={handleGuestLogin}
+                                     disabled={loading}
+                                     style={{
+                                         width: '100%',
+                                         padding: '0.75rem',
+                                         borderRadius: '0.75rem',
+                                         backgroundColor: '#f1f5f9',
+                                         color: '#334155',
+                                         border: '1px solid #e2e8f0',
+                                         display: 'flex',
+                                         justifyContent: 'center',
+                                         alignItems: 'center',
+                                         gap: '0.5rem',
+                                         fontWeight: '500',
+                                         marginTop: '0.5rem',
+                                         cursor: 'pointer',
+                                         transition: 'all 0.2s'
+                                     }}
+                                     onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#e2e8f0'; }}
+                                     onMouseOut={(e) => { e.currentTarget.style.backgroundColor = '#f1f5f9'; }}
+                                 >
+                                     <Users size={18} />
+                                     <span>Continue as Guest</span>
+                                 </button>
 
                                 {/* SECURITY */}
 

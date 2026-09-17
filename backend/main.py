@@ -51,6 +51,28 @@ def initialize_data():
             db.add(teacher)
             db.commit()
 
+        # Ensure Faculty exists
+        faculty_email = "faculty@qratten.com"
+        faculty = db.query(User).filter(User.email == faculty_email).first()
+        if not faculty:
+            print(f"Seeding faculty: {faculty_email}")
+            faculty = User(
+                name="Faculty Member",
+                email=faculty_email,
+                password=get_password_hash("faculty123"),
+                role="teacher",
+                status="active",
+                verified=True
+            )
+            db.add(faculty)
+            db.commit()
+        else:
+            faculty.password = get_password_hash("faculty123")
+            faculty.role = "teacher"
+            faculty.status = "active"
+            faculty.verified = True
+            db.commit()
+
         # 3. Ensure Super Admin exists
         admin_email = "admin@qratten.com"
         admin = db.query(User).filter(User.email == admin_email).first()
@@ -65,6 +87,11 @@ def initialize_data():
                 verified=True
             )
             db.add(admin)
+            db.commit()
+        else:
+            admin.password = get_password_hash("admin123")
+            admin.status = "active"
+            admin.verified = True
             db.commit()
 
         # 3. Ensure Super Student exists
@@ -82,6 +109,11 @@ def initialize_data():
             )
             db.add(student)
             db.commit()
+        else:
+            student.password = get_password_hash("student123")
+            student.status = "active"
+            student.verified = True
+            db.commit()
 
         # Ensure Dummy Guest exists
         guest_email = "guest@qratten.com"
@@ -97,6 +129,11 @@ def initialize_data():
                 verified=True
             )
             db.add(guest)
+            db.commit()
+        else:
+            guest.password = get_password_hash("guest123")
+            guest.status = "active"
+            guest.verified = True
             db.commit()
 
         # 4. Ensure Default Settings exist
